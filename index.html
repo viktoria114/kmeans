@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>K-Means Manual</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    canvas { border: 1px solid #ccc; margin-bottom: 1rem; }
+    button { padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>K-Means Clustering (Paso a Paso)</h2>
+  <canvas id="grafico" width="600" height="400"></canvas>
+  <button onclick="iterarKMeans()">Siguiente iteración ▶</button>
+  <button onclick="reiniciarKMeans()">🔁 Nuevo dataset aleatorio</button>
+  <script src="kmeans.js"></script>
+</body>
+</html>
