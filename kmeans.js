@@ -16,17 +16,47 @@ function generarCentroideAleatorio(minX = 0, maxX = 100, minY = 0, maxY = 10) {
 }
 
 
-const entradas = [ //entradas del profe
-  [40, 1], [30, 2], [25, 3], [28, 2], [29, 4],
-  [18, 10], [10, 1], [71, 5], [18, 4], [38, 2],
-  [73, 6], [72, 3], [79, 5], [86, 2], [24, 1], [19, 5]
+const entradas = [
+  [-34.61315, -58.37723],
+  [-31.4135, -64.18105],
+  [-32.94682, -60.63932],
+  [-38.00042, -57.5562],
+  [-26.82414, -65.2226],
+  [-24.7859, -65.41166],
+  [-31.64881, -60.70868],
+  [-27.36708, -55.89608],
+  [-38.7176, -62.26545],
+  [-27.46056, -58.98389],
+  [-34.66536, -58.72744],
+  [-34.72065, -58.25454],
+  [-24.19457, -65.29712],
+  [-27.79511, -64.26149],
+  [-31.73271, -60.52897],
+  [-38.95161, -68.0591],
+  [-34.51541, -58.76813],
+  [-26.18489, -58.17313],
+  [-34.92145, -57.95453],
+  [-34.76531, -58.21278],
+  [-34.1266,-63.39111],
+  [-26.7,-60.7333]
 ];
 
+
 // Centroides iniciales(pueden ser aleatorios)
-let centroide1 = [35, 4];
-let centroide2 = [18, 10];
+let centroide1 = [-26.37, -61.89];
+let centroide2 = [-34.74, -60.33] ;
 
 let iteracion = 0;
+
+function mostrarMensaje(mensaje) {
+  const infoPanel = document.getElementById("info");
+  const nuevoParrafo = document.createElement("p");
+  nuevoParrafo.textContent = mensaje;
+  infoPanel.appendChild(nuevoParrafo);
+
+  // Auto scroll hacia el final
+  infoPanel.parentElement.scrollTop = infoPanel.parentElement.scrollHeight;
+}
 
 function DistanciaCentroide(cen, entr) {  //calcular distancia con pitagoras
   return Math.sqrt((entr[0] - cen[0]) ** 2 + (entr[1] - cen[1]) ** 2);
@@ -60,9 +90,9 @@ function actualizarCentroides(datos) {  //usa los datos previos
   centroide1 = promedio(grupo1);  //asigna los nuevos valores de centroides con el promedio
   centroide2 = promedio(grupo2);
 
-  console.log(`🔄 Iteración ${iteracion}`);
-  console.log(`📍 Centroide 1: [${centroide1[0]}, ${centroide1[1]}]`);
-  console.log(`📍 Centroide 2: [${centroide2[0]}, ${centroide2[1]}]`);
+  mostrarMensaje(`🔄 Iteración ${iteracion}`);
+  mostrarMensaje(`📍 Centroide 1: [${centroide1[0]}, ${centroide1[1]}]`);
+  mostrarMensaje(`📍 Centroide 2: [${centroide2[0]}, ${centroide2[1]}]`);
 }
 
 function graficar(datos) {
@@ -109,9 +139,13 @@ function graficar(datos) {
     options: {
       responsive: false,
       scales: {
-        x: { title: { display: true, text: "X" }, min: 0, max: 100 },
-        y: { title: { display: true, text: "Y" }, min: 0, max: 12 }
-      },
+  x: {
+    title: { display: true, text: "Latitud" }
+  },
+  y: {
+    title: { display: true, text: "Longitud" }
+  }
+},
       plugins: {
         legend: {
           labels: {

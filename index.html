@@ -5,15 +5,65 @@
   <title>K-Means Manual</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
+  
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+      .info-panel {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        border-left: 5px solid #4caf50;
+        width: 550px;
+        height: 200px;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+      }
+        .info-item {
+            margin: 5px 0;
+        }
+    
     canvas { border: 1px solid #ccc; margin-bottom: 1rem; }
-    button { padding: 10px 20px; font-size: 16px; }
+
   </style>
 </head>
 <body>
   <h2>K-Means Clustering (Paso a Paso)</h2>
   <canvas id="grafico" width="600" height="400"></canvas>
+  <div>
   <button onclick="iterarKMeans()">Siguiente iteración ▶</button>
   <button onclick="reiniciarKMeans()">🔁 Nuevo dataset aleatorio</button>
+      <br /><br />
+
+    <div class="info-panel">
+      <p id="info"></p>
+    </div>
+  </div>
   <script src="kmeans.js"></script>
 </body>
 </html>
