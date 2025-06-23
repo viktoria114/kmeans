@@ -1,4 +1,4 @@
-#📌 kmeans
+# kmeans ✨
 
 K‑Means es una implementación del algoritmo de agrupamiento no supervisado en JavaScript, con visualización interactiva en navegador.
 
@@ -35,3 +35,7 @@ cd kmeans
 - Permitir al usuario cargar su propio archivo CSV
 - Añadir métricas como la suma de distancias intra-cluster
 - Selección dinámica del número de centroides
+
+**Créditos y despliegue**
+Por: Arancio Oviedo María Victoria
+GitHub: https://github.com/viktoria114
